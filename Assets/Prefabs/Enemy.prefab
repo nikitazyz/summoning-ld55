@@ -119,7 +119,7 @@ MonoBehaviour:
   _radius: 2
   _enemyMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   _enemy: {fileID: 5113494388392816976}
   defaultTarget: {fileID: 0}
 --- !u!70 &7960373178678191803

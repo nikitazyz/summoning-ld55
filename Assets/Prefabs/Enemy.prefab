@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 1205159783649925152}
   - component: {fileID: 7960373178678191803}
   - component: {fileID: 6142903213098079735}
+  - component: {fileID: 319787047084775529}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,3 +184,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &319787047084775529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665635897135517616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e8999e04f245ee9aea03ced399932d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drops:
+  - Type: 0
+    Weight: 3
+  - Type: 1
+    Weight: 2
+  - Type: 2
+    Weight: 1
+  _dropPrefab: {fileID: 4127925038596761843, guid: 86361e56201222946821ed9bd717514f, type: 3}
+  _enemy: {fileID: 5113494388392816976}

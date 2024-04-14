@@ -1,15 +1,20 @@
 using System;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, ITargeter
 {
     public event Action Dead;
     
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private float speed = 1;
-    public Transform target;
+    [SerializeField] private TargetSearcher targetSearcher;
+
+    public Transform defaultTarget;
+    private Transform target;
 
     private Health _health;
+
+    public Transform Target { get => target; set => target = value; }
 
     private void Awake()
     {
@@ -28,8 +33,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (target == null)
+        {
+            target = targetSearcher.FindTarget() ?? defaultTarget;
+        }
         Move();
-        
     }
 
     private void Move()

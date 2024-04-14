@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
                 continue;
             }
             var instance = Instantiate(_enemyPrefab);
-            instance.GetComponent<TargetSearcher>().defaultTarget = _target;
+            instance.defaultTarget = _target;
             float x = Random.Range(_spawnBounds.min.x, _spawnBounds.max.x);
             float y = Random.Range(_spawnBounds.min.y, _spawnBounds.max.y);
 

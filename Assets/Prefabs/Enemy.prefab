@@ -103,7 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   speed: 1
-  target: {fileID: 0}
+  targetSearcher: {fileID: 1205159783649925152}
+  defaultTarget: {fileID: 0}
 --- !u!114 &1205159783649925152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +121,6 @@ MonoBehaviour:
   _enemyMask:
     serializedVersion: 2
     m_Bits: 128
-  _enemy: {fileID: 5113494388392816976}
-  defaultTarget: {fileID: 0}
 --- !u!70 &7960373178678191803
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

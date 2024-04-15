@@ -26,3 +26,11 @@ MonoBehaviour:
     Type2: 2
     Type3: 2
     Result: {fileID: 3569501341642673729, guid: b929e73a0fc38504e88731616e0d7757, type: 3}
+  - Type1: 0
+    Type2: 0
+    Type3: 0
+    Result: {fileID: 3088276766310712126, guid: 41865405a5a8abf40acf1c2ec743f3d3, type: 3}
+  - Type1: 1
+    Type2: 1
+    Type3: 1
+    Result: {fileID: 2816153018948992275, guid: b5f3269666f714548acdc71c6b15b16d, type: 3}

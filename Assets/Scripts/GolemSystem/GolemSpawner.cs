@@ -34,7 +34,7 @@ public class GolemSpawner : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _canUse = _inventory.CanUse(_prefab) && Time.timeScale > 0;
+        _canUse = _inventory.CanUse(_prefab);
         if (!_canUse)
         {
             return;

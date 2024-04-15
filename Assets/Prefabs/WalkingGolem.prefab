@@ -144,14 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda08ad2c3ccfa84189243b24db3a85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 35
   maxDistance: 3
   targetSearcher: {fileID: 5215256620428342117}
   speed: 2
   _stopDistance: 1
-  _attackRadius: 1.5
+  _attackRadius: 3
   _attackInterval: 1
-  _damage: 5
+  _damage: 3
   _attackMask:
     serializedVersion: 2
     m_Bits: 64
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e4e0a560eed364186194824bdca295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 4
+  _radius: 8
   _enemyMask:
     serializedVersion: 2
     m_Bits: 64

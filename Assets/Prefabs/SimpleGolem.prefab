@@ -143,10 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa596f281c62498f9136c9899f000cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 45
   _attackRadius: 3
   _attackInterval: 1
-  _damage: 5
+  _damage: 6
   _attackMask:
     serializedVersion: 2
     m_Bits: 64

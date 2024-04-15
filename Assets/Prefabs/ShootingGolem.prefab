@@ -143,12 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed88a037650549ebac1e3e614dce7705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 30
   projectilePrefab: {fileID: 5695507285294869712, guid: 5911d657a00f98f47a22bec6196c130f, type: 3}
   shootingPoint: {fileID: 6752215925010977773}
   _shootInterval: 2
-  _shootDistance: 11.95
-  _damage: 2
+  _shootDistance: 12
+  _damage: 5
   _layerMask:
     serializedVersion: 2
     m_Bits: 64

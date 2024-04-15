@@ -16,11 +16,11 @@ MonoBehaviour:
   _receipts:
   - Type1: 0
     Type2: 0
-    Type3: 0
+    Type3: 1
     Result: {fileID: 7084438442980930054, guid: 17e36bdcec489884687e913cceaeb080, type: 3}
   - Type1: 0
     Type2: 1
-    Type3: 2
+    Type3: 1
     Result: {fileID: 4764141756811804121, guid: 2bbd9f55d7075404aaa389f1e8f27990, type: 3}
   - Type1: 1
     Type2: 2

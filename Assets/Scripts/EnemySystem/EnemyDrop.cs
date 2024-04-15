@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 using Item;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -41,8 +42,9 @@ namespace EnemySystem
         private void EnemyOnDead()
         {
             ResourceType type = GetRandomDropType();
-            var instance = Instantiate(_dropPrefab);
+            var instance = Instantiate(_dropPrefab, transform.position, Quaternion.identity);
             instance.ResourceType = type;
+            Game.Instance.ResourceBank[type]++;
         }
     }
 }

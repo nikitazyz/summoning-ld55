@@ -41,6 +41,7 @@ public class EnemySpawner : MonoBehaviour
 
             Vector3 pos = transform.position + new Vector3(x, y, 0);
             instance.transform.position = pos;
+            instance.Dead += () => _enemies.Remove(instance);
             _enemies.Add(instance);
         }
     }

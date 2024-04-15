@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 7960373178678191803}
   - component: {fileID: 6142903213098079735}
   - component: {fileID: 319787047084775529}
-  m_Layer: 0
+  - component: {fileID: 7990323577784555274}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +105,9 @@ MonoBehaviour:
   maxHealth: 10
   speed: 1
   targetSearcher: {fileID: 1205159783649925152}
+  _attackDistance: 2
+  _attackInterval: 1
+  _damage: 1
   defaultTarget: {fileID: 0}
 --- !u!114 &1205159783649925152
 MonoBehaviour:
@@ -150,11 +154,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0, y: -0.005552292}
+  m_Size: {x: 1, y: 1.9888954}
   m_Direction: 0
 --- !u!50 &6142903213098079735
 Rigidbody2D:
@@ -169,7 +173,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -204,3 +208,23 @@ MonoBehaviour:
     Weight: 1
   _dropPrefab: {fileID: 4127925038596761843, guid: 86361e56201222946821ed9bd717514f, type: 3}
   _enemy: {fileID: 5113494388392816976}
+--- !u!250 &7990323577784555274
+PointEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665635897135517616}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceMagnitude: 10
+  m_ForceVariation: 0
+  m_DistanceScale: 1
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 0
+  m_Drag: 0
+  m_AngularDrag: 0

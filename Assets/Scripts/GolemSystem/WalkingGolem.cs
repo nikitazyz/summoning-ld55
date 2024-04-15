@@ -1,15 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WalkingGolem : Golem
 {
     public float maxDistance = 10f;
     private Vector3 initialPosition;
-    [SerializeField] private TargetSearcher searcher;
+    [SerializeField] private TargetSearcher targetSearcher;
+    [SerializeField] private float speed;
+    [SerializeField] private float _stopDistance;
+    [SerializeField] private float _attackRadius;
+    [SerializeField] private float _attackInterval;
+    [SerializeField] private int _damage;
+    [SerializeField] private LayerMask _attackMask;
+    [SerializeField] private float _horizontalOffset;
 
     private Transform target;
-    [SerializeField] private float speed;
+    private float _timestamp;
+    private bool _isLeft;
 
     private void Start()
     {
@@ -18,29 +24,66 @@ public class WalkingGolem : Golem
 
     private void Update()
     {
-        SearchAndMove();
+        if (!target)
+        {
+            target = targetSearcher.FindTarget();
+        }
+        Attack();
+        Move();
     }
 
-    // Метод поиска цели и перемещения к ней
-    private void SearchAndMove()
+    private void Move()
     {
-        if (searcher != null)
+        if (target == null)
         {
-            if (target)
-            {
-                return;
-            }
-            target = searcher.FindTarget();
-            if (target)
-            {
-                float distance = Vector3.Distance(initialPosition, transform.position);
-                if (distance < maxDistance)
-                {
-                    var direction = target.position - transform.position;
-                    direction = Vector3.ClampMagnitude(direction, speed);
-                    transform.Translate(direction * Time.deltaTime);
-                }
-            }
+            return;
         }
+
+        var direction = target.position - transform.position;
+        direction = Vector3.ClampMagnitude(direction, speed);
+        if (Vector3.Distance(transform.position + direction * Time.deltaTime, initialPosition) > maxDistance)
+        {
+            return;
+        }
+
+        if (Vector2.Distance(transform.position, target.position) < _stopDistance)
+        {
+            return;
+        }
+
+        _isLeft = direction.x < 0;
+        transform.Translate(direction * Time.deltaTime);
+    }
+
+    private void Attack()
+    {
+
+        if (Time.time - _timestamp < _attackInterval)
+        {
+            return;
+        }
+
+        _timestamp = Time.time;
+
+        Collider2D[] colliders = new Collider2D[50];
+        Physics2D.OverlapCircleNonAlloc(transform.position + Vector3.right * (_horizontalOffset * (_isLeft ? -1 : 1)), _attackRadius, colliders, _attackMask);
+
+        foreach (var collider in colliders)
+        {
+            if (!collider)
+            {
+                continue;
+            }
+            var damageable = collider.GetComponent<IDamageable>();
+            damageable.Health.TakeDamage(_damage);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(initialPosition, maxDistance);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + Vector3.right * _horizontalOffset, _attackRadius);
+        Gizmos.DrawWireSphere(transform.position + Vector3.right * -_horizontalOffset, _attackRadius);
     }
 }

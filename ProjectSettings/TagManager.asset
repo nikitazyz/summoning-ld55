@@ -14,7 +14,7 @@ TagManager:
   - Enemy
   - Golem
   - Spawn
-  - 
+  - Tower
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bg
+    uniqueID: 976390305
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -25,6 +25,22 @@ namespace CraftingSystem
             var el = _receipts.FirstOrDefault(r => r.Type1 == r1 && r.Type2 == r2 && r.Type3 == r3);
             return el == null ? _default : el.Result;
         }
+
+        public ResourceType[] GetReceiptByGameObject(GameObject gameObject)
+        {
+            var result = _receipts.FirstOrDefault(r => r.Result == gameObject);
+            if (result == null)
+            {
+                return null;
+            }
+
+            return new []
+            {
+                result.Type1,
+                result.Type2,
+                result.Type3
+            };
+        }
     }
     
     

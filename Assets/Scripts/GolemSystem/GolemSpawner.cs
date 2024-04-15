@@ -12,6 +12,7 @@ public class GolemSpawner : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
     [SerializeField] private GameObject _prefab;
     [SerializeField] private TMP_Text _text;
     [SerializeField] private Inventory _inventory;
+    [SerializeField] private LayerMask _spawnZone;
 
     private bool _canUse;
 
@@ -44,18 +45,35 @@ public class GolemSpawner : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!_canUse)
+        
+        _cursor.gameObject.SetActive(false);
+        if (!_canUse || 
+            EventSystem.current.IsPointerOverGameObject() || 
+            !Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition), _spawnZone))
         {
             return;
         }
-        _cursor.gameObject.SetActive(false);
         var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         point.z = 0;
         var instance = Instantiate(_prefab, point, Quaternion.identity);
+        _inventory.Use(_prefab);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        Color c = _cursor.color;
+        if (EventSystem.current.IsPointerOverGameObject() || 
+            !Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition), _spawnZone))
+        {
+            c.a = 0.5f;
+        }
+        else
+        {
+            c.a = 1;
+        }
+
+        _cursor.color = c;
+        
         _cursor.transform.position = Input.mousePosition;
     }
 }

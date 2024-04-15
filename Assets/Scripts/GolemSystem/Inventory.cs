@@ -17,7 +17,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            _inventory[element] = 0;
+            _inventory[element] = 1;
         }
         ValueChanged?.Invoke(element, _inventory[element]);
     }

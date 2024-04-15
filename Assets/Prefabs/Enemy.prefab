@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  speed: 1
+  speed: 3
   targetSearcher: {fileID: 1205159783649925152}
   _attackDistance: 2
   _attackInterval: 1
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e8999e04f245ee9aea03ced399932d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dropChance: 0.2
   _drops:
   - Type: 0
     Weight: 3

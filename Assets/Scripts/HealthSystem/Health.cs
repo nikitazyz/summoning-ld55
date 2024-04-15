@@ -22,6 +22,8 @@ public class Health
         }
     }
 
+    public int MaxValue => _maxValue;
+
     public Health(int maxValue)
     {
         _maxValue = maxValue;

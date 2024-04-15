@@ -11,15 +11,18 @@ public class InventoryOpen : MonoBehaviour
 
     private bool _value;
 
+    public bool IsOpen => _value;
+
     private void Awake()
     {
         _button.onClick.AddListener(ToggleInventory);
         _animator.SetBool("Open", _value);
     }
 
-    private void ToggleInventory()
+    public void ToggleInventory()
     {
         _value = !_value;
         _animator.SetBool("Open", _value);
+        Time.timeScale = _value ? 0 : 1;
     }
 }

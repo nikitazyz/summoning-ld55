@@ -9,6 +9,7 @@ namespace EnemySystem
 {
     public class EnemyDrop : MonoBehaviour
     {
+        [SerializeField, Range(0f, 1f)] private float _dropChance = 0.2f;
         [SerializeField] private DropWeight[] _drops;
         [SerializeField] private ItemDrop _dropPrefab;
         [SerializeField] private Enemy _enemy;
@@ -41,6 +42,10 @@ namespace EnemySystem
 
         private void EnemyOnDead()
         {
+            if (Random.value > _dropChance)
+            {
+                return;
+            }
             ResourceType type = GetRandomDropType();
             var instance = Instantiate(_dropPrefab, transform.position, Quaternion.identity);
             instance.ResourceType = type;

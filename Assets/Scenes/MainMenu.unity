@@ -2131,7 +2131,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1544464510
 RectTransform:
@@ -2146,13 +2146,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1597607664}
+  - {fileID: 1942365607}
   - {fileID: 1376357839}
   - {fileID: 1994237239}
   - {fileID: 2140678298}
   - {fileID: 1960647188}
   - {fileID: 2091640463}
   - {fileID: 460141382}
-  - {fileID: 1942365607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2831,7 +2831,7 @@ AudioSource:
   m_GameObject: {fileID: 1960647187}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0d160e922afb0f84388e144daeb6bd0c, type: 2}
   m_audioClip: {fileID: 8300000, guid: bdd0c130a2843964e99c2a2b50bd367c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.15
@@ -3542,7 +3542,7 @@ AudioSource:
   m_GameObject: {fileID: 2140678297}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0d160e922afb0f84388e144daeb6bd0c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 672409c5216d6764f86f78751c87af4f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1

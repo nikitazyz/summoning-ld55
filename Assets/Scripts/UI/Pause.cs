@@ -8,6 +8,7 @@ namespace UI
     public class Pause : MonoBehaviour
     {
         [SerializeField] private Button _pause;
+        [SerializeField] private Button _resume;
         [SerializeField] private Button _replay;
         [SerializeField] private Button _mainMenu;
         [SerializeField] private GameObject _pausePanel;
@@ -19,6 +20,7 @@ namespace UI
         private void Awake()
         {
             _pause.onClick.AddListener(OnPause);
+            _resume.onClick.AddListener(OnPause);
             _replay.onClick.AddListener(OnReplay);
             _mainMenu.onClick.AddListener(OnMainMenu);
         }

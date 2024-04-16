@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayButton : MonoBehaviour
 {
-    private float time = 2f;
+    private float time = 1f;
     private bool started = false;
     public void LoadScene(string sceneName)
     {

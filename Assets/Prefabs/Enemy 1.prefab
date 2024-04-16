@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e8999e04f245ee9aea03ced399932d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropChance: 0.2
+  _dropChance: 0.5
   _drops:
   - Type: 0
     Weight: 3

@@ -28,7 +28,7 @@ public class GolemSpawner : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
     {
         _cursor.gameObject.SetActive(false);
         _inventory.ValueChanged += ValueChanged;
-        _text.text = "x"+_inventory.GetCount(_prefab);
+        _text.text = ""+_inventory.GetCount(_prefab);
 
         var result =_receipts.GetReceiptByGameObject(_prefab);
         if (result == null)
@@ -47,7 +47,7 @@ public class GolemSpawner : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
         {
             return;
         }
-        _text.text = "x"+count.ToString();
+        _text.text = ""+count.ToString();
     }
 
     public void OnPointerDown(PointerEventData eventData)

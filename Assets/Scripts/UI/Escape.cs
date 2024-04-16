@@ -6,6 +6,7 @@ namespace UI
     public class Escape : MonoBehaviour
     {
         [SerializeField] private InventoryOpen _inventoryOpen;
+        [SerializeField] private Pause _pause;
 
         private void Update()
         {
@@ -19,6 +20,8 @@ namespace UI
                 _inventoryOpen.ToggleInventory();
                 return;
             }
+
+            _pause.OnPause();
         }
     }
 }

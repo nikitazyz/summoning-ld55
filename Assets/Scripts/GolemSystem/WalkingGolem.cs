@@ -12,6 +12,7 @@ public class WalkingGolem : Golem
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _attackMask;
     [SerializeField] private float _horizontalOffset;
+    [SerializeField] private Animator _animator;
 
     private Transform target;
     private float _timestamp;
@@ -34,6 +35,7 @@ public class WalkingGolem : Golem
 
     private void Move()
     {
+        _animator.SetBool("Walking", false);
         if (target == null)
         {
             return;
@@ -53,6 +55,7 @@ public class WalkingGolem : Golem
 
         _isLeft = direction.x < 0;
         transform.Translate(direction * Time.deltaTime);
+        _animator.SetBool("Walking", true);
     }
 
     private void Attack()

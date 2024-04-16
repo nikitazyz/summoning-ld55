@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float _attackDistance;
     [SerializeField] private float _attackInterval;
     [SerializeField] private int _damage;
+    [SerializeField] private Animator _animator;
 
     public Transform defaultTarget;
     private Transform target;
@@ -54,6 +55,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void Move()
     {
+        _animator.SetBool("Walking", false);
         if (target == null)
         {
             return;
@@ -68,6 +70,7 @@ public class Enemy : MonoBehaviour, IDamageable
         direction = Vector3.ClampMagnitude(direction, speed);
 
         transform.Translate(direction * Time.deltaTime);
+        _animator.SetBool("Walking", true);
     }
 
     private void Attack()

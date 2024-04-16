@@ -15,7 +15,6 @@ namespace Core
             }
 
             Instance = (T)this;
-            DontDestroyOnLoad(this);
         }
     }
 }

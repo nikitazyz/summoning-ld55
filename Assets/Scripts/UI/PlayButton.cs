@@ -5,9 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class PlayButton : MonoBehaviour
 {
+    private float time = 2f;
+    private bool started = false;
     public void LoadScene(string sceneName)
     {
-        
+        if (started)
+        {
+            return;
+        }
+        StartCoroutine(PlayRoutine(sceneName));
+    }
+
+    IEnumerator PlayRoutine(string sceneName)
+    {
+        started = true;
+        yield return new WaitForSeconds(time);
         SceneManager.LoadScene(sceneName);
     }
 }

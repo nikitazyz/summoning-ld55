@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace GolemSystem
@@ -11,7 +13,8 @@ namespace GolemSystem
         [SerializeField] private LayerMask _attackMask;
 
         private float _timestamp;
-        
+        [SerializeField] private Animator _animator;
+
         private void Update()
         {
             Attack();
@@ -27,9 +30,21 @@ namespace GolemSystem
 
             _timestamp = Time.time;
 
+            
+            StartCoroutine(AttackProcess());
+        }
+
+        private IEnumerator AttackProcess()
+        {
             Collider2D[] colliders = new Collider2D[50];
             Physics2D.OverlapCircleNonAlloc(transform.position, _attackRadius, colliders, _attackMask);
 
+            if (colliders.Any(c => c))
+            {
+                _animator.SetTrigger("Attack");
+            }
+
+            yield return new WaitForSeconds(0.5f);
             foreach (var collider in colliders)
             {
                 if (!collider)

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6142903213098079735}
   - component: {fileID: 319787047084775529}
   - component: {fileID: 7990323577784555274}
+  - component: {fileID: 2470078746887716538}
   m_Layer: 6
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0.13679248, b: 0.13679248, a: 1}
+  m_Sprite: {fileID: 427871071, guid: 6b3d800ef770e134a8afc6f1596d3da5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,9 +106,10 @@ MonoBehaviour:
   maxHealth: 13
   speed: 1
   targetSearcher: {fileID: 1205159783649925152}
-  _attackDistance: 2
+  _attackDistance: 3
   _attackInterval: 1
   _damage: 7
+  _animator: {fileID: 2470078746887716538}
   defaultTarget: {fileID: 0}
 --- !u!114 &1205159783649925152
 MonoBehaviour:
@@ -157,9 +159,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.005552292}
-  m_Size: {x: 1, y: 1.9888954}
-  m_Direction: 0
+  m_Offset: {x: 0.281133, y: 0.24045062}
+  m_Size: {x: 1.5622663, y: 0.77771235}
+  m_Direction: 1
 --- !u!50 &6142903213098079735
 Rigidbody2D:
   serializedVersion: 4
@@ -229,3 +231,24 @@ PointEffector2D:
   m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!95 &2470078746887716538
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665635897135517616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c96fcc8fdb73c541983ebad262efbe7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

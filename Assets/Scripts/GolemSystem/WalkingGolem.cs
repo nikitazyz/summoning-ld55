@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class WalkingGolem : Golem
@@ -15,12 +16,14 @@ public class WalkingGolem : Golem
     [SerializeField] private Animator _animator;
 
     private Transform target;
+    private Vector2 randomPoint;
     private float _timestamp;
     private bool _isLeft;
 
     private void Start()
     {
         initialPosition = transform.position;
+        StartCoroutine(RandomPointSwitch());
     }
 
     private void Update()
@@ -38,6 +41,15 @@ public class WalkingGolem : Golem
         _animator.SetBool("Walking", false);
         if (target == null)
         {
+            if (Vector2.Distance(randomPoint, transform.position) < 0.05f)
+            {
+                return;
+            }
+            var dir = randomPoint - (Vector2)transform.position;
+            dir = Vector2.ClampMagnitude(dir, speed);
+            _isLeft = dir.x < 0;
+            transform.Translate(dir * Time.deltaTime);
+            _animator.SetBool("Walking", true);
             return;
         }
 
@@ -88,5 +100,15 @@ public class WalkingGolem : Golem
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position + Vector3.right * _horizontalOffset, _attackRadius);
         Gizmos.DrawWireSphere(transform.position + Vector3.right * -_horizontalOffset, _attackRadius);
+    }
+
+    IEnumerator RandomPointSwitch()
+    {
+        while (true)
+        {
+            randomPoint = (Vector2)initialPosition + new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized *
+                          Random.Range(0, maxDistance);
+            yield return new WaitForSeconds(Random.Range(2f, 4f));
+        }
     }
 }

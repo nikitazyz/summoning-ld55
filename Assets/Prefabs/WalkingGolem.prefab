@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 4650821088840779642}
   - component: {fileID: 5215256620428342117}
   - component: {fileID: 4585978744598775126}
+  - component: {fileID: 4935467080612180225}
   m_Layer: 7
   m_Name: WalkingGolem
   m_TagString: Untagged
@@ -400,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e4e0a560eed364186194824bdca295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 8
+  _radius: 6
   _enemyMask:
     serializedVersion: 2
     m_Bits: 64
@@ -425,6 +426,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4935467080612180225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084438442980930054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381c6ffd7cb149ccbeec86954c945ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 4649203522280323339}
+  _tint: {r: 1, g: 0.2784314, b: 0.2784314, a: 1}
+  _enemy: {fileID: 4650821088840779642}
 --- !u!1 &9139289449309668293
 GameObject:
   m_ObjectHideFlags: 0

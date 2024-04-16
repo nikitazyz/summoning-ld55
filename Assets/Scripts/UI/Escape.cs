@@ -8,6 +8,11 @@ namespace UI
         [SerializeField] private InventoryOpen _inventoryOpen;
         [SerializeField] private Pause _pause;
 
+        private void Start()
+        {
+            _inventoryOpen.ToggleInventory();
+        }
+
         private void Update()
         {
             if (!Input.GetKeyDown(KeyCode.Escape))

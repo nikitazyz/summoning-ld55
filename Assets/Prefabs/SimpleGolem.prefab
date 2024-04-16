@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7225293340762990260}
   - component: {fileID: 2310617197539815107}
   - component: {fileID: 1891227813915213551}
+  - component: {fileID: 321806290652211954}
   m_Layer: 7
   m_Name: SimpleGolem
   m_TagString: Untagged
@@ -174,6 +175,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &321806290652211954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569501341642673729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381c6ffd7cb149ccbeec86954c945ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 7225293340762990260}
+  _tint: {r: 1, g: 0.2784314, b: 0.2784314, a: 1}
+  _enemy: {fileID: 2310617197539815107}
 --- !u!1 &4381419212354599708
 GameObject:
   m_ObjectHideFlags: 0

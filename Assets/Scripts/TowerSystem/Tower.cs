@@ -1,4 +1,5 @@
 ﻿using System;
+using UI;
 using UnityEngine;
 
 namespace TowerSystem
@@ -14,6 +15,8 @@ namespace TowerSystem
         [SerializeField] private float _kickForce = 20f;
         [SerializeField] private int _damage;
         [SerializeField] private LayerMask _enemy;
+
+        [SerializeField] private DamageZone _damageZone;
 
         private float _timestamp;
         private float _regenerationTimeStamp;
@@ -53,6 +56,10 @@ namespace TowerSystem
             _timestamp = Time.time;
 
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _attackRadius, _enemy);
+            if (colliders.Length > 0)
+            {
+                _damageZone.Run();
+            }
             foreach (var collider2D1 in colliders)
             {
                 var damageable = collider2D1.GetComponent<IDamageable>();

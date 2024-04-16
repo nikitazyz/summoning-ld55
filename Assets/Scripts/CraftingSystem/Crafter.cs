@@ -14,6 +14,7 @@ namespace CraftingSystem
         [SerializeField] private Image _cell1;
         [SerializeField] private Image _cell2;
         [SerializeField] private Image _cell3;
+        [SerializeField] private AudioSource _audioSource;
 
         private ResourceCell _resourceCell1;
         private ResourceCell _resourceCell2;
@@ -91,6 +92,7 @@ namespace CraftingSystem
                 _resourceCell2.ResourceType,
                 _resourceCell3.ResourceType);
             _inventory.AddToInventory(obj);
+            _audioSource.Play();
             Clear();
         }
     }

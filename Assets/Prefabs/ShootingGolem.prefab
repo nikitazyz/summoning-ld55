@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 8614350463185677244}
   - component: {fileID: 2792431624693954199}
   - component: {fileID: 8889526966891633696}
+  - component: {fileID: 8740084799378215694}
   m_Layer: 7
   m_Name: ShootingGolem
   m_TagString: Untagged
@@ -370,6 +371,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8740084799378215694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4764141756811804121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381c6ffd7cb149ccbeec86954c945ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 8614350463185677244}
+  _tint: {r: 1, g: 0.2784314, b: 0.2784314, a: 1}
+  _enemy: {fileID: 2792431624693954199}
 --- !u!1 &6703950714902555955
 GameObject:
   m_ObjectHideFlags: 0
